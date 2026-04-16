@@ -1,4 +1,4 @@
-<p align="center">
+<div align="center">
   <h1 align="center">🛡️ agentguard</h1>
   <p align="center"><b>Runtime budget control and tool-call reliability for AI agents</b></p>
   <p align="center">
@@ -6,11 +6,25 @@
     <a href="https://github.com/rigvedrs/agentguard/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/github/license/rigvedrs/agentguard"></a>
     <a href="https://www.python.org/downloads/"><img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-blue"></a>
     <a href="https://github.com/rigvedrs/agentguard/actions"><img alt="CI Tests" src="https://img.shields.io/github/actions/workflow/status/rigvedrs/agentguard/ci.yml?label=tests"></a>
-    <a href="https://pypi.org/project/awesome-agentguard/"><img alt="PyPI Downloads" src="https://img.shields.io/pypi/dm/awesome-agentguard"></a>
+    <a href="https://pypi.org/project/awesome-agentguard/"><img alt="PyPI wheel" src="https://img.shields.io/pypi/wheel/awesome-agentguard"></a>
   </p>
-</p>
+</div>
 
 ---
+<p align="center">
+New to agentguard? Start with the guided onboarding site:
+</p>
+<p align="center">
+    <a href="https://rigvedrs.github.io/agentguard-site/"><img alt="Open the project website (agentguard.site)" src="https://img.shields.io/badge/OPEN%20SITE-agentguard.site-6366f1?style=for-the-badge&logo=googlechrome&logoColor=white"></a>
+</p>
+
+<p align="center">
+For Docs:
+</p>
+<p align="center">
+    <a href="https://rigvedrs.github.io/agentguard/"><img alt="Open the documentation" src="https://img.shields.io/badge/OPEN%20DOCS-agentguard-0f766e?style=for-the-badge&logo=readthedocs&logoColor=white"></a>
+</p>
+
 
 **AI agents overspend, call tools with wrong parameters, and trust broken tool responses.** `agentguard` is a lightweight Python runtime that keeps agent runs inside budget and makes tool calls trustworthy with spend caps, response verification, validation, retries, and tracing.
 
