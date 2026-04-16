@@ -1,0 +1,153 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "awesome-agentguard"
+version = "0.2.0"
+description = "Guardrails for AI agents — hallucination detection, tool call validation, circuit breakers, rate limiting, and budget enforcement. One decorator. Any LLM framework."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Rigved Shirvalkar", email = "rigvedrs@gmail.com" },
+]
+keywords = [
+    "ai-agents",
+    "guardrails",
+    "llm",
+    "tool-calling",
+    "function-calling",
+    "hallucination-detection",
+    "hallucination",
+    "circuit-breaker",
+    "rate-limiter",
+    "budget-enforcement",
+    "middleware",
+    "runtime-verification",
+    "ai-safety",
+    "agent-testing",
+    "openai",
+    "anthropic",
+    "langchain",
+    "mcp",
+    "openrouter",
+    "groq",
+    "together-ai",
+    "fireworks-ai",
+    "deepinfra",
+    "pydantic",
+    "decorator",
+    "validation",
+    "generative-ai",
+    "agentic-ai",
+    "tool-validation",
+    "agent-reliability",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: System :: Monitoring",
+    "Framework :: AsyncIO",
+    "Framework :: Pytest",
+    "Typing :: Typed",
+]
+
+dependencies = [
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+rich = ["rich>=13.0"]
+policy = ["pyyaml>=6.0"]
+otel = [
+    "opentelemetry-api>=1.0",
+    "opentelemetry-sdk>=1.0",
+]
+crewai = ["crewai>=0.40"]
+autogen = ["pyautogen>=0.2"]
+benchmark = ["openai>=1.0"]
+costs = ["litellm>=1.0"]
+docs = ["mkdocs-material>=9.0"]
+dashboard = []
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+    "pytest-cov>=4.0",
+    "mypy>=1.0",
+    "ruff>=0.1",
+    "rich>=13.0",
+    "pyyaml>=6.0",
+    "openai>=1.0",
+]
+all = [
+    "rich>=13.0",
+    "openai>=1.0",
+    "litellm>=1.0",
+    "anthropic>=0.20",
+    "langchain-core>=0.1",
+    "opentelemetry-api>=1.0",
+    "opentelemetry-sdk>=1.0",
+    "crewai>=0.40",
+    "pyautogen>=0.2",
+    "mkdocs-material>=9.0",
+]
+
+[project.scripts]
+agentguard = "agentguard.cli.main:main"
+
+[project.urls]
+Homepage = "https://github.com/rigvedrs/agentguard"
+Documentation = "https://github.com/rigvedrs/agentguard#quick-start"
+Changelog = "https://github.com/rigvedrs/agentguard/releases"
+Repository = "https://github.com/rigvedrs/agentguard"
+Issues = "https://github.com/rigvedrs/agentguard/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agentguard"]
+
+[tool.hatch.build.targets.wheel.shared-data]
+"src/agentguard/py.typed" = "agentguard/py.typed"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = ["--tb=short", "-q"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+ignore_missing_imports = true
+packages = ["agentguard"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "ANN", "B", "C4", "SIM"]
+ignore = ["ANN101", "ANN102"]
+
+[tool.coverage.run]
+source = ["src/agentguard"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if TYPE_CHECKING:",
+]
