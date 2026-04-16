@@ -80,7 +80,10 @@ crewai = ["crewai>=0.40"]
 autogen = ["pyautogen>=0.2"]
 benchmark = ["openai>=1.0"]
 costs = ["litellm>=1.0"]
-docs = ["mkdocs-material>=9.0"]
+docs = [
+    "mkdocs-material>=9.0",
+    "mkdocstrings[python]>=0.24",
+]
 dashboard = []
 dev = [
     "pytest>=7.0",
@@ -103,6 +106,7 @@ all = [
     "crewai>=0.40",
     "pyautogen>=0.2",
     "mkdocs-material>=9.0",
+    "mkdocstrings[python]>=0.24",
 ]
 
 [project.scripts]

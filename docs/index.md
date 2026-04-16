@@ -13,6 +13,8 @@ AI agents overspend, call tools with wrong parameters, and trust broken tool res
 
 Works with **OpenAI**, **Anthropic**, **OpenRouter**, **LangChain**, **CrewAI**, **AutoGen**, **MCP**, or any Python function. Only core dependency: `pydantic`.
 
+> New to agentguard? Start with the guided onboarding site: [agentguard-site](https://rigvedrs.github.io/agentguard-site/).
+
 ```python
 from agentguard import guard
 
@@ -164,3 +166,4 @@ generator.generate_tests(output="tests/test_generated.py")
 - [@guard Decorator](guides/guard-decorator.md) — every option explained with examples
 - [Response Verification](guides/response-verification.md) — how anomaly detection works under the hood
 - [API Reference](reference/api.md) — complete class and function reference
+- Prefer a more visual introduction? Visit the onboarding site: [agentguard-site](https://rigvedrs.github.io/agentguard-site/)
